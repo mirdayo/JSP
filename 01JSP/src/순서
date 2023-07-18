@@ -1,0 +1,34 @@
+01 JDK 설치
+
+02 TOMCAT Ver  9 설치 (설치 후 비활성화)
+
+03 Eclipse Web 설치 
+
+04 Eclipse Web 설정
+
+- Dynamic Web Project
+file->new->Dynamic Web Project
+
+
+- Tomcat Server 연결
+file->new -> other -> server검색후 선택 -> apache -> Tomcat Ver 9 -> finish
+하단 servers 클릭 -> Tomcat V9.0 Server 더블클릭 -> Admin port 8081 선택 후 저장(ctrl+s)
+Tomcat V9.0 Server 우클릭 -> add And Remove -> 01JSP프로젝트폴더 오른쪽으로 옮기기
+ 
+
+- Tomcat Server - Web Project 설정
+
+
+- Files Encoding UTF-8
+window -> preference -> files 검색 -> css,html,jsp 의 Encoding 을 UTF-8설정
+
+- Web Project별 Web.xml 생성 후 관리
+프로젝트 우클릭 -> JAVA EE Tools -> Generate Deployment Descriptor stub클릭
+
+- Emmet 설치하기
+https://soda-dev.tistory.com/9
+
+
+- Tune 설치하기(자바스크립트 자동완성)
+https://choitaetae.tistory.com/84
+
