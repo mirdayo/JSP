@@ -1,5 +1,6 @@
 package Domain.Common.Dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import Domain.Common.Dto.LendDto;
@@ -15,6 +16,9 @@ public interface LendDao {
 
 	int update(LendDto dto) throws Exception;
 
-	int delete(String id) throws Exception;
+	int delete(String id) throws 
+	Exception;
+
+	List<LendDto> select(String id) throws SQLException ;
 
 }

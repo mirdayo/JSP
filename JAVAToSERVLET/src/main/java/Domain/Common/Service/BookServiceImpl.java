@@ -34,7 +34,9 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<BookDto> getAllBook(HttpServletRequest req) throws Exception {
 		System.out.println("BookService's getAllBook()");
+		
 		List<BookDto> result = (List<BookDto>)dao.select();
+
 		return result;
 	}
 	
