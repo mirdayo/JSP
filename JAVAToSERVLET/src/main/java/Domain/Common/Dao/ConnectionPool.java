@@ -5,31 +5,27 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public abstract class ConnectionPool {
-	protected String id;
-	protected String pw;
-	protected String url;
+public class ConnectionPool {
+	protected static String id="root";
+	protected static String pw="1234";
+	protected static String url="jdbc:mysql://192.168.2.254:3306/bookdb";
 	
-	protected static Connection conn;
+	public static Connection conn;
 	protected PreparedStatement pstmt;
 	protected ResultSet rs;
 	
-
-	
-	ConnectionPool(){
-		id="root";
-		pw="1234";
-		url="jdbc:mysql://localhost:3306/bookdb";
-		
+	public static void createConnection() {
 		try {
 			if(conn==null) {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn=DriverManager.getConnection(url,id,pw);
 				System.out.println("ConnectionPool Connection 생성");
 			}
-				
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	ConnectionPool(){
 	}
 }

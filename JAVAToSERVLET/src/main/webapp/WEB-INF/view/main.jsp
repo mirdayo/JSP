@@ -73,7 +73,7 @@ EL's Project ServerPort :${pageContext.request.serverPort}<br/>
 		const show_block_el = document.querySelector('.show_block');
 		//ajax , fetch , promise , axios 선택해서 비동기 요청
 		//axios Cdn 연결이후에 작업하세요(https://cdnjs.com/libraries/axios)	
-		axios.get("http://localhost:"+ ServerPort + projectPath +"/book/search.do")
+		axios.get("http://192.168.2.254:"+ ServerPort + projectPath +"/book/search.do")
 		.then(response=>{ 
 			console.log("success!",response.data); 
 			const list = response.data;

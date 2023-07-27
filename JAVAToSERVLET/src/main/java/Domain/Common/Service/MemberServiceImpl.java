@@ -127,10 +127,12 @@ public class MemberServiceImpl implements MemberService {
 			req.setAttribute("msg", "[ERROR] Login Fail... 패스워드가 일치하지 않습니다");
 			return false;
 		}
-		
-		HttpSession session = req.getSession();
+		System.out.println("login func's dbDto" + dbDto);
+		HttpSession session = req.getSession(true);
+		System.out.println("login func's session : " + session);
 		session.setAttribute("ID", id);
 		session.setAttribute("ROLE", dbDto.getRole());
+		session.setMaxInactiveInterval(60*30);
 		return true;
 	}
 	

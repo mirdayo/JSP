@@ -1,11 +1,13 @@
 package Controller.lend;
 
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.SubController;
+import Domain.Common.Dao.ConnectionPool;
 import Domain.Common.Dto.LendDto;
 import Domain.Common.Service.LendService;
 import Domain.Common.Service.LendServiceImpl;
@@ -38,6 +40,7 @@ public class LendAddController  implements SubController{
 			
 			Boolean isLend=false;
 		
+			System.out.println("LendAddController'Session role : " + req.getSession().getAttribute("ROLE") );
 			isLend = service.reqLend(req);
 		
 	
@@ -51,6 +54,15 @@ public class LendAddController  implements SubController{
 			}
 			
 		} catch (Exception e) {
+//			try {
+//			
+//				ConnectionPool.conn.rollback();
+//				System.out.println("[Exception] Lend_Add서비스에 대한 Rollback..");
+//			} catch (SQLException e1) {
+//				// TODO Auto-generated catch block
+//				e1.printStackTrace();
+//			}
+			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

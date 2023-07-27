@@ -25,6 +25,7 @@ import Controller.member.MemberSearchController;
 import Controller.member.MemberUpdateController;
 import Controller.member.auth.LoginController;
 import Controller.member.auth.LogoutController;
+import Domain.Common.Dao.ConnectionPool;
 
 public class FrontController extends HttpServlet {
 
@@ -48,7 +49,11 @@ public class FrontController extends HttpServlet {
 		map.put(projectPath+"/lend/search.do", new LendSearchController());
 		map.put(projectPath+"/lend/add.do", new LendAddController());
 		map.put(projectPath+"/lend/update.do", new LendUpdateController());
-		map.put(projectPath+"/lend/delete.do", new LendDeleteController());		
+		map.put(projectPath+"/lend/delete.do", new LendDeleteController());
+		
+		//lendMsg
+		map.put(projectPath+"/lend/messageRemove.do", new LendMessageRemoveController());
+		
 		
 		//member
 		map.put(projectPath+"/member/search.do", new MemberSearchController());
@@ -65,14 +70,15 @@ public class FrontController extends HttpServlet {
 		//main
 		map.put(projectPath+"/main.do",new MainController());
 
+		ConnectionPool.createConnection();
 	}
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html; charset=UTF-8");
+//        req.setCharacterEncoding("UTF-8");
+//        resp.setCharacterEncoding("UTF-8");
+//        resp.setContentType("text/html; charset=UTF-8");
         
 		System.out.println("FrontController's service Uri : " + req.getRequestURI());// 
 		

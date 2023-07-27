@@ -38,7 +38,7 @@ MSG : <span class="add_msg"></span>
 		const form=document.lendAddForm;
 		const params = {params :{'bookcode':form[0].value,'id':form[1].value } }
 		
-		axios.post("http://localhost:"+ ServerPort + projectPath +"/lend/add.do",null,params)
+		axios.post("http://192.168.2.254:"+ ServerPort + projectPath +"/lend/add.do",null,params)
 		.then(response=>{
 			console.log('response',response);
 			console.log('response',response.data);
@@ -55,5 +55,7 @@ MSG : <span class="add_msg"></span>
 <!-- 도서 대여 내역 조회 -->
 
 <!--  -->
+<hr/>
+<a href="javascript:history.go(-1)">이전으로</a>
 </body>
 </html>

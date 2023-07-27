@@ -38,6 +38,7 @@ public class LoginController  implements SubController{
 		//1 파라미터 추출
 		String id = (String) req.getParameter("id");
 		String pw = (String) req.getParameter("pw");
+		System.out.println("LoginController paramtes : " + id + " " + pw);
 		
 		try {
 			//2 입력값 검증
